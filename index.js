@@ -201,13 +201,16 @@ RETURN new array
 
 
 function filterByWord(arr, str){
-    // for(let i = 0; i < arr.length;)
-/* forEach check to see if it contains str
-if true push to NEW ARRAY
-RETURN new array */
+    const newArr = [];
 
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i].includes(str)){
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
 }
-
+console.log(filterByWord(originalFlavors, "Lemon"));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
@@ -221,7 +224,7 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
+function getAverageWordLength(arr){
     /*code here*/
 }
 
