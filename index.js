@@ -41,13 +41,29 @@ With all of these changes going on, we don't want to lose track of the actual, o
 
 /*
 Use the copy function below to do the following:
-    1. Receive two arguments: one for your new array and one for your original array
+    1. Receive one arguments: one for your new array and one for your original array
     2. Return the new array that holds an exact copy of the old array  
 */
 
-function copy(/*your code here*/){
-    /*your code here*/
-}    
+
+function copy(original){
+    return [...original]
+}
+const copyCat = copy(originalFlavors);
+
+
+
+// OG answer
+// function copy(origArray){
+//     let copyArray = [];
+//     for(var i = 0; i < origArray.length; i++){
+//     copyArray.push(origArray[i]);
+//     };
+//     return copyArray;
+// };
+
+// console.log(copy(originalFlavors));
+
 
 
 
@@ -64,8 +80,12 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-   /*your code here*/
+function is31Flavors(array){
+   if (array.length === 31){
+       return true;
+   } else{
+       return false;
+   }
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,8 +101,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
+function addFlavor(array, newFlavor){
+    array.unshift(newFlavor)
+    return array;
 }
 
 
@@ -97,8 +118,11 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+
+
+function removeLastFlavor(array){
+    array.pop();
+    return array;
 }
 
 
@@ -113,8 +137,8 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+function getFlavorByIndex(array, index){
+    return array[index];
 }
 
 
@@ -123,7 +147,7 @@ As corporate wants to add more and more flavors to their lineup, they've realize
 as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
 
 Use the removeFlavorByName function below to do the following:
-    1. Receive an array and a string (the flavour to be removed)
+    // 1. Receive an array and a string (the flavour to be removed)
     2. Remove that flavor from the array
     5. Return the resulting array that now contains one less flavor
 
@@ -132,10 +156,22 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+
+// param arr + param str
+// find the index of the str you have been given
+// array.splice(index, howmany) to remove what you don't want. howmany would be 1 here and index would be the index found
+// return arr AFTER splice has been made
+
+
+function removeFlavorByName(arr, str){
+    let index = arr.indexOf(str);
+    console.log(index);
+    arr.splice(index, 1);
+    console.log(arr);
+    return arr;
 }
 
+// removeFlavorByName(originalFlavors, 'Coffee')
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -157,8 +193,19 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+/* para1 = arr, param2 = str
+forEach check to see if it contains str
+if true push to NEW ARRAY
+RETURN new array
+*/
+
+
+function filterByWord(arr, str){
+    // for(let i = 0; i < arr.length;)
+/* forEach check to see if it contains str
+if true push to NEW ARRAY
+RETURN new array */
+
 }
 
 
